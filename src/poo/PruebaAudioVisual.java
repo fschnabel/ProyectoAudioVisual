@@ -1,4 +1,6 @@
 package poo;
+import java.util.ArrayList;
+
 import uni1a.*;
 
 public class PruebaAudioVisual {
@@ -9,7 +11,7 @@ public class PruebaAudioVisual {
         ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[3];
         String[] nombreActores = {"Juan", "María", "Pedro", "Ana"};
         contenidos[0] = new Pelicula("Avatar", 125, "Accion", "20th Century Studios", nombreActores);
-        contenidos[1] = new SerieDeTV("Game of Thrones", 60, "Fantasy",  new Temporada[8]);
+        contenidos[1] = new SerieDeTV("Game of Thrones", 60, "Fantasy",  new ArrayList<Temporada>());
         contenidos[2] = new Documental("Cosmos", 45, "Science", "Astronomy", new Investigador());
 
         // Mostrar los detalles de cada contenido audiovisual

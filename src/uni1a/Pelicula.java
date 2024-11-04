@@ -13,7 +13,7 @@ public class Pelicula extends ContenidoAudiovisual {
 	public Pelicula(String titulo, int duracionEnMinutos, String genero, String estudio, String[] actores) {
 		super(titulo, duracionEnMinutos, genero);
 		this.estudio = estudio;
-		this.setActores(Arrays.stream(actores).map(nombre -> new Actor(nombre)).toArray(Actor[]::new));
+		this.setActores(Arrays.stream(actores).map(nombre -> Actor.getActor(nombre, this)).toArray(Actor[]::new));
 	}
 
 	public String getEstudio() {
