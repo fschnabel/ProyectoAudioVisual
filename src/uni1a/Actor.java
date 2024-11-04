@@ -74,6 +74,7 @@ public class Actor {
 	public void mostrarDetalles() {
         System.out.println("Detalles del actor");
         System.out.println("nombre: " + this.nombre);
+        System.out.println("Producciones Audio Visuales: ");
         for (ContenidoAudiovisual iterador : this.producciones) {
         	iterador.mostrarDetalles();
         }

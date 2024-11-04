@@ -38,6 +38,10 @@ public class SerieDeTV extends ContenidoAudiovisual {
         System.out.println("Detalles de la Serie de TV:");
         super.mostrarDetalles();
         System.out.println("Temporadas: " + this.temporadas);
+        System.out.println("Actores: ");
+		for (Actor iterador : actores) {
+			System.out.println("\t -" + iterador.getNombre());
+		}
         System.out.println();
     }
 

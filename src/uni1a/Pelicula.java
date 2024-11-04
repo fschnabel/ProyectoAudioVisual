@@ -38,6 +38,10 @@ public class Pelicula extends ContenidoAudiovisual {
 		System.out.println("Detalles de la película:");
 		super.mostrarDetalles();
 		System.out.println("Estudio: " + estudio);
+		System.out.println("Actores: ");
+		for (Actor iterador : actores) {
+			System.out.println("\t -" + iterador.getNombre());
+		}
 		System.out.println();
 	}
 
