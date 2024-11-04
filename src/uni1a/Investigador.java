@@ -1,8 +1,20 @@
 package uni1a;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Investigador {
 	private String nombre;
-	private Documental[] documental;
+	private List<Documental> documentales;
+	
+	public Investigador(String nombre) {
+		this.nombre = nombre;
+	}
+	
+	public Investigador(String nombre, Documental documental) {
+		this.nombre = nombre;
+		this.agregarDocumental(documental);
+	}
 	
 	public String getNombre() {
 		return nombre;
@@ -12,11 +24,19 @@ public class Investigador {
 		this.nombre = nombre;
 	}
 	
-	public Documental[] getDocumental() {
-		return documental;
+	public List<Documental> getDocumental() {
+		return documentales;
 	}
-	public void setDocumental(Documental[] documental) {
-		this.documental = documental;
+	
+	public void setDocumentales(List<Documental> documentales) {
+		this.documentales = documentales;
+	}
+	
+	public void agregarDocumental(Documental documental) {
+		if (this.documentales == null) {
+			this.documentales = new ArrayList<Documental>();
+		}
+		this.documentales.add(documental);
 	}
 	
 }
