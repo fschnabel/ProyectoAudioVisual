@@ -16,3 +16,5 @@ de esa forma evitar duplicidad de codigo en las clases en la cual se hereda
 	VideoMusical.java (En esta clase se va a manejar los videos musicales que se incluyan en nuestro contenido audio visual)
 	
 - Se cambia la clase Actor.java para que contenga una creación basada en una fabrica de Actores para que a un mismo actor se le puedan agregar mas peliculas
+
+- Se cambia la clase Actor.java para que pueda soportar ContenidoAudiovisual en vez de solo Pelicula de esa forma poder tener Pelicula y SerieDeTV compartiendo Actores

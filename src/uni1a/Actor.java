@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public class Actor {
 	private String nombre;
-	private List<Pelicula> peliculas;
+	private List<ContenidoAudiovisual> producciones;
 	
 	private static List<Actor> actores;
 	
@@ -24,16 +24,16 @@ public class Actor {
 		}
 	}
 	
-	public static Actor getActor(String nombre, Pelicula pelicula) {
+	public static Actor getActor(String nombre, ContenidoAudiovisual produccion) {
 		if (actores == null) {
 			actores = new ArrayList<Actor>();
 		}
 		Optional<Actor> buscarActor = actores.stream().filter(a -> a.nombre.equals(nombre)).findFirst();
 		if (buscarActor.isPresent()) {
-			buscarActor.get().agregarPelicula(pelicula);
+			buscarActor.get().agregarPelicula(produccion);
 			return buscarActor.get();
 		}else {
-			Actor nuevoActor = new Actor(nombre, pelicula);
+			Actor nuevoActor = new Actor(nombre, produccion);
 			actores.add(nuevoActor);
 			return nuevoActor;
 		}
@@ -43,7 +43,7 @@ public class Actor {
 		this.setNombre(nombre);
 	}
 	
-	private Actor(String nombre, Pelicula pelicula) {
+	private Actor(String nombre, ContenidoAudiovisual pelicula) {
 		this.setNombre(nombre);
 		this.agregarPelicula(pelicula);
 	}
@@ -56,19 +56,28 @@ public class Actor {
 		this.nombre = nombre;
 	}
 
-	public List<Pelicula> getPeliculas() {
-		return peliculas;
+	public List<ContenidoAudiovisual> getPeliculas() {
+		return producciones;
 	}
 
-	public void setPeliculas(List<Pelicula> peliculas) {
-		this.peliculas = peliculas;
+	public void setPeliculas(List<ContenidoAudiovisual> producciones) {
+		this.producciones = producciones;
 	}
 	
-	public void agregarPelicula(Pelicula pelicula) {
-		if (peliculas == null) {
-			peliculas = new ArrayList<Pelicula>();
+	public void agregarPelicula(ContenidoAudiovisual produccion) {
+		if (this.producciones == null) {
+			this.producciones = new ArrayList<ContenidoAudiovisual>();
 		}
-		peliculas.add(pelicula);
+		this.producciones.add(produccion);
 	}
+	
+	public void mostrarDetalles() {
+        System.out.println("Detalles del actor");
+        System.out.println("nombre: " + this.nombre);
+        for (ContenidoAudiovisual iterador : this.producciones) {
+        	iterador.mostrarDetalles();
+        }
+        System.out.println();
+    }
 	
 }
