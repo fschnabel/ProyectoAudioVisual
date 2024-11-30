@@ -99,7 +99,7 @@ public class ArchivoPlano implements TipoArchivo {
 	 * Devuelve el índice de un atributo que puede ser una lista.
 	 *
 	 * @param valor Valor del atributo.
-	 * @return Índice del atributo si es válido, -1 en caso contrario.
+	 * @return Indice del atributo si es válido, -1 en caso contrario.
 	 */
 	private int esLista(String valor) {
 		for (int i = 0; i < cabecera.length; i++) {
